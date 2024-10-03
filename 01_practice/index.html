@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScriptの基礎</title>
+  </head>
+  <body>
+    <h1 id="heading">練習の見出し</h1>
+    <p id="elem">変化させたい要素</p>
+    <img id="image" src="https://picsum.photos/200/300?image=0" />
+
+    <script>
+      const elem = document.getElementById("elem");
+      console.log(elem);
+
+      elem.addEventListener("mouseover", function () {
+        image.setAttribute("src", "https://picsum.photos/200/300?image=100");
+      });
+
+      elem.addEventListener("mouseout", function () {
+        image.setAttribute("src", src);
+      });
+
+      const image = document.getElementById("image");
+      let src = image.getAttribute("src");
+      console.log(src);
+      //   image.setAttribute("src", "https://picsum.photos/200/300?image=100");
+    </script>
+
+    <!-- <script>
+      const elem = document.getElementById("elem");
+      console.log(elem);
+
+      elem.addEventListener("mouseover", function () {
+        elem.style.fontSize = "50px";
+        elem.style.color = "#ff0000";
+        elem.style.backgroundColor = "#0000ff";
+        heading.style.fontSize = "100px";
+      });
+
+      elem.addEventListener("mouseout", function () {
+        elem.style.fontSize = "16px";
+        elem.style.backgroundColor = "transparent";
+        heading.style.fontSize = "60px";
+      });
+
+      const heading = document.getElementById("heading");
+      console.log(heading);
+      heading.style.marginBottom = "40px";
+      heading.style.fontSize = "60px";
+    </script> -->
+  </body>
+</html>
