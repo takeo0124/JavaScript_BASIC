@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>練習01</title>
+  </head>
+
+  <body>
+    <p id="result">0</p>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+
+    <script>
+      //   let plus = document.getElementById("plus");
+      //   console.log("plus");
+
+      //   plus.addEventListener("click", function () {
+      //     plus = plus + 1;
+      //     console.log(plus);
+      //   });
+      let num = 0;
+      let result = document.getElementById("result");
+      const plusBtn = document.getElementById("plus");
+      const minusBtn = document.getElementById("minus");
+      plusBtn.innerHTML = "数字を増やす";
+      minusBtn.innerHTML = "数字を減らす";
+
+      plusBtn.addEventListener("click", function () {
+        num += 1;
+        console.log(num);
+
+        result.innerHTML = num;
+      });
+
+      minusBtn.addEventListener("click", function () {
+        num -= 1;
+        console.log(num);
+
+        result.innerHTML = num;
+      });
+
+      console.log("takagi" + "hirotaka");
+      console.log(10 + "px");
+      let val = 1;
+      console.log("url(" + val + ".png)");
+      console.log(`url(1.png)`);
+      console.log(`url($)`);
+    </script>
+  </body>
+</html>
