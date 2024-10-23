@@ -13,6 +13,24 @@
     <p id="result">https://picsum.photos/400/300?image=0</p>
     <img id="photo" src="https://picsum.photos/400/300?image=0" />
 
-    <script></script>
+    <script>
+      const plusBtn = document.getElementById("plus");
+      const setBtn = document.getElementById("set");
+      const result = document.getElementById("result");
+      const photo = document.getElementById("photo");
+
+      let src = photo.getAttribute("src");
+      let num = 0;
+
+      plusBtn.addEventListener("click", function () {
+        num += 1;
+        setBtn.innerHTML = num;
+      });
+
+      setBtn.addEventListener("click", function () {
+        result.innerHTML = `https://picsum.photos/400/300?image=${num}`;
+        photo.setAttribute("src", `https://picsum.photos/400/300?image=${num}`);
+      });
+    </script>
   </body>
 </html>
