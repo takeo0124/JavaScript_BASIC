@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>条件分岐</title>
+  </head>
+  <body>
+    <p id="sample" class="hoge fuga">ほげ</p>
+
+    <script>
+      const sample = document.getElementById("sample");
+      console.log(sample.classList);
+
+      sample.classList.add("piyo");
+      sample.classList.remove("hoge");
+      sample.classList.replace("fuga", "hogera");
+
+      //   let fruit = "りんご";
+      //   console.log(fruit == "りんご");
+      //   console.log(fruit == "ばなな");
+
+      //   if (fruit == "ばなな") {
+      //     console.log("りんごがあります。");
+      //   }
+
+      //   let year = 2024;
+      //   if (year > 2018) {
+      //     console.log(`令和${year - 2018}年！`);
+      //   }
+
+      //   let num = 10;
+      //   if (num % 2 === 0) {
+      //     // numを2で割り切れたら
+      //     console.log("偶数！");
+      //   } else {
+      //     // 割り切れなかった時
+      //     console.log("奇数！");
+      //   }
+      //   //   %は割った数の余りを表す
+
+      //   let year = 1925;
+
+      //   if (year <= 1925) {
+      //     console.log("大昔");
+      //   } else if (year <= 1989) {
+      //     console.log("昭和");
+      //   } else if (year <= 2018) {
+      //     console.log("平成");
+      //   } else if (year <= 2024) {
+      //     console.log("令和");
+      //   } else {
+      //     console.log("未来");
+      //   }
+    </script>
+  </body>
+</html>
