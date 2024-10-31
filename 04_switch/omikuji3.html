@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>おみくじ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+    <style>
+      .merter {
+        margin-left: 10px;
+      }
+
+      .name {
+        display:flex;
+        width:300px;
+        justify-content: space-between;
+      }
+
+      .count {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+      }
+      .count li {
+        padding:20px;
+        background-color:#ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">占う</button>
+    <p>
+      <img
+        id="result"
+        src="https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/omikuji.png"
+        alt="占う"
+      />
+    </p>
+    <p id="message">何か一言が表示されます。</p>
+    <div class="merter">
+      <ul class="name">
+        <li>大吉</li>
+        <li>中吉</li>
+        <li>小吉</li>
+        <li>凶</li>
+        <li>大凶</li>
+      </ul>
+        <ul class="count">
+          <li id="daikichi">0</p>
+          <li id="chuukichi">0</p>
+          <li id="syoukichi">0</p>
+          <li id="kyou">0</p>
+          <li id="daikyou">0</p>
+        </ul>
+    </div>
+    <script>
+      const btn = document.getElementById("btn");
+      const result = document.getElementById("result");
+      const message = document.getElementById("message");
+
+      btn.addEventListener("click", function () {
+        let num = Math.floor(Math.random() * 5);
+        console.log(num);
+        let daikichi = 0;
+        let chuukichi = 0;
+        let syoukichi = 0;
+        let kyou = 0;
+        let daikyou = 0;
+
+        switch (num) {
+          case 0:
+            result.setAttribute(
+              "src",
+              `https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/daikichi.png`
+            );
+            message.innerHTML = "最高";
+            break;
+
+          case 1:
+            result.setAttribute(
+              "src",
+              `https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/chuukichi.png`
+            );
+            message.innerHTML = "まあいい";
+            break;
+
+          case 2:
+            result.setAttribute(
+              "src",
+              `https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/syoukichi.png`
+            );
+            message.innerHTML = "普通";
+            break;
+
+          case 3:
+            result.setAttribute(
+              "src",
+              `https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/kyou.png`
+            );
+            message.innerHTML = "だめ";
+            break;
+
+          default:
+            result.setAttribute(
+              "src",
+              `https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/daikyou.png`
+            );
+            message.innerHTML = "最悪";
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>
