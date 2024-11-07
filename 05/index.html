@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>繰り返し処理</title>
+  </head>
+  <body>
+    <script>
+      // りんごを五回コンソールに表示させよう
+      //   let num = 0;
+      //   while (num < 5) {
+      //     console.log("りんご");
+      //     num += 1;
+      //   }
+
+      // 0から10の間で、偶数の数字（0も含む）を順番にコンソールに表示する。
+      //   let num = 0;
+      //   while (num <= 10) {
+      //     if (num % 2 === 0) {
+      //       console.log(num);
+      //     }
+      //     num += 1;
+      //   }
+
+      // 0から10の間で、奇数の数字（0も含む）を順番にコンソールに表示する。
+      //   let num = 0;
+      //   while (num <= 10) {
+      //     if (num % 2 !== 0) {
+      //       console.log(num);
+      //     }
+      //     num += 1;
+      //   }
+
+      // 0から100までの数をすべて足した結果をコンソールに表示する。（答えは「5050」）
+      let num = 0,
+        sum = 0;
+      while (num <= 100) {
+        sum += num;
+        num += 1;
+      }
+      console.log(sum);
+    </script>
+  </body>
+</html>

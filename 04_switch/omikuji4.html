@@ -4,16 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>おみくじ</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css"
+    />
     <style>
+      .merter {
+        margin-left: 10px;
+      }
+
+      .name {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+      }
+
+      .count {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+      }
+      .count li {
+        padding: 20px;
+        background-color: #ddd;
+      }
+
       #result {
         transition: 1s;
       }
 
       .active {
         transform: rotateZ(360deg);
-        /* transform: translate3d(100px, 50%, 3em); */
-        /* transform: scale3d(2.5, 1.2, 0.3); */
-        /* transform: skew(30deg, 20deg); */
       }
     </style>
   </head>
@@ -27,12 +48,20 @@
       />
     </p>
     <p id="message">何か一言が表示されます。</p>
+    <ul class="count"></ul>
     <script>
       const btn = document.getElementById("btn");
       const result = document.getElementById("result");
       const message = document.getElementById("message");
       const path =
         "https://trident.takagino.net/doc2024/javascript/assets/04/omikuji";
+      const count = document.getElementById("count");
+      count.innerHTML = `
+      <li>大吉：${daikichi}</li>
+      <li>中吉：${chuukichi}</li>
+      <li>小吉：${syoukichi}</li>
+      <li>凶：${kyou}</li>
+      <li>大凶：${daikyou}</li>`;
 
       btn.addEventListener("click", function () {
         let num = Math.floor(Math.random() * 5);
@@ -41,31 +70,41 @@
         switch (num) {
           case 0:
             result.setAttribute("src", `${path}/daikichi.png`);
-            message.innerHTML = "買ってないのに宝くじが当たる";
+            message.innerHTML = "最高";
+            daikichi += 1;
             break;
 
           case 1:
             result.setAttribute("src", `${path}/chuukichi.png`);
-            message.innerHTML = "何もしてないのに褒められる";
+            message.innerHTML = "まあいい";
+            chuuki += 1;
             break;
 
           case 2:
             result.setAttribute("src", `${path}/syoukichi.png`);
-            message.innerHTML = "頭皮の調子がいい";
+            message.innerHTML = "普通";
+            syoukichi += 1;
             break;
 
           case 3:
             result.setAttribute("src", `${path}/kyou.png`);
-            message.innerHTML = "コンタクトレンズが割れる";
+            message.innerHTML = "だめ";
+            kyou += 1;
             break;
 
           default:
             result.setAttribute("src", `${path}/daikyou.png`);
-            message.innerHTML = "どこかの骨を折る";
+            message.innerHTML = "最悪";
+            daikyou += 1;
             break;
         }
-
         result.classList.toggle("active");
+        count.innerHTML = `
+      <li>大吉：${daikichi}</li>
+      <li>中吉：${chuukichi}</li>
+      <li>小吉：${syoukichi}</li>
+      <li>凶：${kyou}</li>
+      <li>大凶：${daikyou}</li>`;
       });
     </script>
   </body>

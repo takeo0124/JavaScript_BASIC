@@ -25,6 +25,15 @@
         padding:20px;
         background-color:#ddd;
       }
+
+            #result {
+        transition: 1s;
+      }
+
+      .active {
+        transform: rotateZ(360deg);
+      }
+
     </style>
   </head>
   <body>
@@ -57,57 +66,104 @@
       const btn = document.getElementById("btn");
       const result = document.getElementById("result");
       const message = document.getElementById("message");
+      const path =
+        "https://trident.takagino.net/doc2024/javascript/assets/04/omikuji";
+      const daikichi = document.getElementById("daikichi");
+      const chuukichi = document.getElementById("chuukichi");
+      const syoukichi = document.getElementById("syoukichi");
+      const kyou = document.getElementById("kyou");
+      const daikyou = document.getElementById("daikyou");
+
+
+        let daikichiCount = 0;
+        let chuukichiCount = 0;
+        let syoukichiCount = 0;
+        let kyouCount = 0;
+        let daikyouCount = 0;
+
 
       btn.addEventListener("click", function () {
-        let num = Math.floor(Math.random() * 5);
+        let num = Math.floor(Math.random() * 10);
         console.log(num);
-        let daikichi = 0;
-        let chuukichi = 0;
-        let syoukichi = 0;
-        let kyou = 0;
-        let daikyou = 0;
 
+        // 大吉の場合
         switch (num) {
           case 0:
             result.setAttribute(
               "src",
-              `https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/daikichi.png`
+              `${path}/daikichi.png`
             );
-            message.innerHTML = "最高";
+            daikichiCount += 1;
+            daikichi.innerHTML = `${daikichiCount}`;
+
+            // 出た回数によってコメントを変える
+            switch(daikichi) {
+            case 1:
+            message.innerHTML = '最高';
+            break;
+            case 2:
+            message.innerHTML = 'いいね';
+            break;
+            default:
+            message.innerHTML = 'すごー';
+            break;
+            }
+
             break;
 
           case 1:
-            result.setAttribute(
-              "src",
-              `https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/chuukichi.png`
-            );
-            message.innerHTML = "まあいい";
-            break;
-
           case 2:
             result.setAttribute(
               "src",
-              `https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/syoukichi.png`
+              `${path}/chuukichi.png`
             );
-            message.innerHTML = "普通";
+            message.innerHTML = "まあいい";
+            chuukichiCount += 1;
+            chuukichi.innerHTML = `${chuukichiCount}`;
+
             break;
 
           case 3:
+          case 4:
+          case 5:
+          case 6:
             result.setAttribute(
               "src",
-              `https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/kyou.png`
+              `${path}/syoukichi.png`
             );
-            message.innerHTML = "だめ";
+            message.innerHTML = "普通";
+            syoukichiCount += 1;
+            syoukichi.innerHTML = `${syoukichiCount}`;
+
             break;
 
-          default:
+          case 7:
+          case 8:
             result.setAttribute(
               "src",
-              `https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/daikyou.png`
+              `${path}/kyou.png`
+            );
+            message.innerHTML = "だめ";
+            kyouCount += 1;
+            kyou.innerHTML = `${kyouCount}`;
+
+            break;
+
+            case 9:
+            result.setAttribute(
+              "src",
+              `${path}/daikyou.png`
             );
             message.innerHTML = "最悪";
+            daikyouCount += 1;
+            daikyou.innerHTML = `${daikyouCount}`;
+            default:
+
+
             break;
         }
+                result.classList.toggle("active");
+
       });
     </script>
   </body>
