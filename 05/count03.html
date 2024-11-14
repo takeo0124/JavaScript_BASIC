@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>カウント</title>
+  </head>
+  <body>
+    <button id="count">カウント</button>
+    <button id="show">表示</button>
+    <p id="result">0</p>
+
+    <script>
+      // 「カウント」ボタンをクリックするたびに数字が増える。
+      // 「表示」ボタンをクリックすると、「0, 1, 2, 3, 4, 5」のように、カウントアップのテキストが表示される。
+      const count = document.getElementById("count");
+      const show = document.getElementById("show");
+      const result = document.getElementById("result");
+      let init = 0;
+      let num = init;
+
+      count.addEventListener("click", function () {
+        num++;
+        result.innerHTML = `${num}`;
+      });
+
+      show.addEventListener("click", function () {
+        let hoge = init;
+
+        for (let i = 1; i <= num; i++) {
+          hoge += `,${i + init}`;
+        }
+        result.innerHTML = `${hoge}`;
+        num = init;
+      });
+    </script>
+  </body>
+</html>

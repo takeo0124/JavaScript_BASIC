@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>配列とランダム</title>
+  </head>
+  <body>
+    <p id="text">a</p>
+    <button id="btn">ランダム</button>
+    <script>
+      const texts = ["猫", "犬", "鳥"];
+      const colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#00ffff"];
+      const btn = document.getElementById("btn");
+
+      btn.addEventListener("click", function () {
+        const num = Math.floor(Math.random() * colors.length);
+        document.body.style.backgroundColor = `${colors[num]}`;
+        const hoge = Math.floor(Math.random() * texts.length);
+        text.innerHTML = texts[hoge];
+        document.body.style.fontSize = "40px";
+      });
+    </script>
+  </body>
+</html>
