@@ -7,16 +7,45 @@
   </head>
   <body>
     <script>
-      const fruits = ["apple", "banana", "orange"];
-      console.log(fruits[3]);
+      // const fruits = ["apple", "banana", "orange"];
+      // console.log(fruits[3]);
 
-      fruits[1] = "peach";
-      fruits[3] = "egg";
-      console.log(fruits.length);
-      console.log(fruits[fruits.length - 1]);
+      // fruits[1] = "peach";
+      // fruits[3] = "egg";
+      // console.log(fruits.length);
+      // console.log(fruits[fruits.length - 1]);
 
-      const empty = [];
-      console.log(empty);
+      // const empty = [];
+      // console.log(empty);
+
+      // const fruits = ["apple", "banana", "orange"];
+
+      // for (let i = 0; i < fruits.length; i++) {
+      //   console.log(`${i}番目の値は、${fruits[i]}です。`);
+      // }
+
+      /* for文を使って、配列内の数値を全て足し、その値をコンソールに表示する。（正解は105） */
+      // const num = [5, 10, 15, 20, 25, 30];
+
+      // let sum = 0;
+
+      // for (let i = 0; i < num.length; i++) {
+      //   sum += num[i];
+      // }
+      // console.log(sum);
+
+      // iはnumの何番目なのかを表している。let i = 0;は５のこと
+
+      /* for文を使って、配列内の最初と最後を除く数値を全て足し、その値をコンソールに表示する。（正解は70） */
+
+      const num = [5, 10, 15, 20, 25, 30];
+
+      let sum = 0;
+
+      for (let i = 1; i < num.length - 1; i++) {
+        sum += num[i];
+      }
+      console.log(sum);
     </script>
   </body>
 </html>

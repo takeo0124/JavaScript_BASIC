@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>練習問題</title>
+  </head>
+  <body>
+    <p id="result">ブラウザのサイズが表示されます。</p>
+
+    <script>
+      const result = document.getElementById("result");
+      window.addEventListener("resize", function () {
+        result.innerHTML = `${window.innerWidth}px:${window.innerHeight}px`;
+
+        if (window.innerHeight <= 400) {
+          document.body.style.color = "#ff0000";
+        } else {
+          document.body.style = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
