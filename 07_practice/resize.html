@@ -13,6 +13,9 @@
       window.addEventListener("resize", function () {
         result.innerHTML = `${window.innerWidth}px:${window.innerHeight}px`;
 
+        //複数の値をコンソールに表示したいときはカンマで区切る。
+        console.log(window.innerWidth, window.innerHeight);
+
         if (window.innerHeight <= 400) {
           document.body.style.color = "#ff0000";
         } else {

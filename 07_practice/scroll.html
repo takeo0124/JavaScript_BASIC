@@ -4,51 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>練習問題</title>
+    <style>
+      body {
+        height: 3000px;
+        background: linear-gradient(
+          0deg,
+          rgba(34, 193, 195, 1) 0%,
+          rgba(253, 187, 45, 1) 100%
+        );
+      }
+
+      #toTop {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        width: 50px;
+        height: 50px;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+
+        font-size: 1rem;
+        line-height: 1rem; /* 1行のテキストを上下中央にする */
+
+        /* 1行ではないものを上下中央にする
+        display:flex;
+        jusutify-content:center;
+        align-items:center; */
+        text-align: center;
+        cursor: pointer;
+        display: none;
+      }
+
+      #toTop.active {
+        display: block;
+      }
+    </style>
   </head>
-  <style>
-    body {
-      height: 3000px;
-      background: linear-gradient(
-        0deg,
-        rgba(34, 193, 195, 1) 0%,
-        rgba(253, 187, 45, 1) 100%
-      );
-    }
-
-    #toTop {
-      position: fixed;
-      bottom: 50px;
-      right: 50px;
-      width: 50px;
-      height: 50px;
-      border: 0;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      font-size: 1rem;
-      line-height: 1rem;
-      text-align: center;
-      cursor: pointer;
-      display: none;
-    }
-
-    #toTop.active {
-      display: block;
-    }
-  </style>
   <body>
     <button id="toTop">↑</button>
 
     <script>
-      const toTop = document.getElementById("toTop");
+      const toTop = document.querySelector("#toTop");
+      const limit = 300;
 
       window.addEventListener("scroll", function () {
-        if (window.scrollY > 300) {
+        if (window.scrollY > limit) {
           toTop.classList.add("active");
         } else {
           toTop.classList.remove("active");
         }
       });
+      /* ⬆︎これでも動くけどずっと実行しようとしてるから重くなる */
+
+      /* &&かつ || または ! 否定 */
+
+      /* window.addEventListener("scroll", function () {
+        if (window.scrollY > limit && !toTop.classList.contains("active")) {
+          toTop.classList.add("active");
+        } else if (window.scrollY <= limit && toTop.classList.contains("active")) {
+          toTop.classList.remove("active");
+        }
+      }); */
     </script>
   </body>
 </html>
